@@ -1,5 +1,8 @@
 import restaurants from './fixtures/restaurants';
 import RestaurantsContainer from './RestaurantsContainer';
+import { setRestaurants } from './actions';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 export default function App() {
   const dispatch = useDispatch()
