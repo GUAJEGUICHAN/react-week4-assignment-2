@@ -1,14 +1,11 @@
-export function updateInput(name, value) {
+export function setRestaurants(restaurants) {
   return {
-    type: 'handleChangeValue',
+    type: 'setRestaurants',
     payload: {
-      [name]: value,
-    },
-  };
+      restaurants
+    }
+  }
 }
-
-export function updateData() {
-  return {
-    type: 'saveData',
-  };
+// TODO: delete this.
+export function xxx() {
 }
