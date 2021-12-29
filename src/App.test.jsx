@@ -1,21 +1,27 @@
 import { render } from '@testing-library/react';
-import restaurants from './fixtures/restaurants'
 import { useDispatch, useSelector } from 'react-redux';
+import restaurants from './fixtures/restaurants';
 
 import App from './App';
 
-
-jest.mock('react-redux')
+jest.mock('react-redux');
 test('App', () => {
-  const dispatch = jest.fn()
+  const dispatch = jest.fn();
   useDispatch.mockImplementation(() => dispatch);
-  useSelector.mockImplementation((selector) => ({
+  useSelector.mockImplementation((selector) => selector({
     restaurants,
+    restaurant: {},
+  }));
 
-  }))
   const { getByText } = render((
     <App />
   ));
-  expect(dispatch).toBeCalled();
+
+  expect(dispatch).toBeCalledWith({
+    type: 'setRestaurants',
+    payload: {
+      restaurants,
+    },
+  });
   expect(getByText(/김밥제국/)).not.toBeNull();
 });

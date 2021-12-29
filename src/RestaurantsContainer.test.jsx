@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { useSelector } from 'react-redux';
-import restaurants from './fixtures/restaurants'
+import restaurants from './fixtures/restaurants';
 
 import RestaurantsContainer from './RestaurantsContainer';
 

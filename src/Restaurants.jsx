@@ -8,7 +8,6 @@ export default function Restaurants({ restaurants }) {
           {restaurant.category}
           |
           {restaurant.address}
-
           { }
         </li>
       ))}

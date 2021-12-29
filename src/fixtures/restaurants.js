@@ -4,4 +4,5 @@ const restaurants = [{
   category: '분식',
   address: '서울시 강남구 역삼동 ',
 }];
-export default restaurants
+
+export default restaurants;
