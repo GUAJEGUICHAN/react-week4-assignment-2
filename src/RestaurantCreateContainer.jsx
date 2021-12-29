@@ -9,6 +9,7 @@ export default function RestaurantCreateContainer() {
   }));
 
   const dispatch = useDispatch();
+
   function handleChange(name, value) {
     dispatch(changeRestaurantField(name, value));
   }

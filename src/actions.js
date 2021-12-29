@@ -15,6 +15,7 @@ export function changeRestaurantField(name, value) {
     },
   };
 }
+
 // TODO: delete this.
 export function xxx() {
 }
