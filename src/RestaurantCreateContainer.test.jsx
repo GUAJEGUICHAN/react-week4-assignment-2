@@ -1,7 +1,17 @@
-import { fireEvent, render } from '@testing-library/react';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+  fireEvent,
+  render,
+} from '@testing-library/react';
 
-import { changeRestaurantField } from './actions';
+import {
+  useDispatch,
+  useSelector,
+} from 'react-redux';
+
+import {
+  changeRestaurantField,
+  addRestaurant,
+} from './actions';
 
 import RestaurantCreateContainer from './RestaurantCreateContainer';
 
@@ -12,7 +22,10 @@ test('RestaurantCreateContainer', () => {
   // ^render이 잘되는가
   // useState 잘 되는가
   // ^입력 잘되기는지 useDispatch 점검
-  // 버튼 되는지 useDispatch 점검
+  // 버튼 되는지 useDispatch 점검하자
+  /// / onclick mock 만든다
+  /// / dispatch에 전달할 an action만든다.
+  /// / dispatch에
   useSelector.mockImplementation(
     (selector) => selector({
       restaurant: {
@@ -37,4 +50,7 @@ test('RestaurantCreateContainer', () => {
 
   fireEvent.change(getByDisplayValue('김밥제국'), { target: { value: '김밥지옥' } });
   expect(dispatch).toBeCalledWith(changeRestaurantField('name', '김밥지옥'));
+
+  fireEvent.click(getByText('등록'));
+  expect(dispatch).toBeCalledWith(addRestaurant());
 });
